@@ -1,4 +1,4 @@
-package com.example.myfirstkotlinapplication
+package com.example.myfirstkotlinapplication.pages
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.sp
 
 @Preview(showBackground = true)
 @Composable
-fun Offer(modifier: Modifier = Modifier) {
+fun OfferPage(modifier: Modifier = Modifier) {
 
     val style = TextStyle(
         fontWeight = FontWeight.Normal,

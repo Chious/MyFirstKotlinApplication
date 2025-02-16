@@ -1,5 +1,6 @@
 package com.example.myfirstkotlinapplication
 
+import App
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -19,16 +20,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MyFirstKotlinApplicationTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                   Text("Hello World")
-                }
+                App()
             }
         }
     }
-}
-
-@Preview
-@Composable
-fun MyFirstComposable(){
-    Text("Hello World")
 }
