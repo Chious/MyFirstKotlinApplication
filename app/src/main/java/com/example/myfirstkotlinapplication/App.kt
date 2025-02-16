@@ -2,17 +2,14 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.myfirstkotlinapplication.DataManager
 import com.example.myfirstkotlinapplication.NavBarBottom
 import com.example.myfirstkotlinapplication.Routes
 import com.example.myfirstkotlinapplication.pages.InfoPage
@@ -88,7 +85,9 @@ fun MyAppBar(
 }
 
 @Composable
-fun App() {
+fun App(
+    dataManager: DataManager
+) {
 
         var selectedRoute = remember {
             mutableStateOf(Routes.MenuPage.route)
@@ -116,9 +115,9 @@ fun App() {
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
            when (selectedRoute.value) {
-               Routes.MenuPage.route -> MenuPage()
+               Routes.MenuPage.route -> MenuPage(dataManager)
                Routes.OfferPage.route -> OfferPage()
-               Routes.OrderPage.route -> OrderPage()
+               Routes.OrderPage.route -> OrderPage(dataManager)
                Routes.InfoPage.route -> InfoPage()
            }
         }
